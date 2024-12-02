@@ -3,4 +3,3 @@ service : {
     "get_chat": () -> (vec text) query;
     "add_msg": (text) -> ();
 }
-

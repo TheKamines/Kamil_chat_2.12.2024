@@ -5,12 +5,12 @@ thread_local! {
 }
 
 #[ic_cdk::query]
-fn get_chat() -> Vec{
+fn get_chat() -> Vec<String> {
     CHAT.with(|chat| chat.borrow().clone())
 }
 
 #[ic_cdk::update]
-fn add_msg(new_msg: String){
+fn add_msg(new_msg: String) {
     CHAT.with(|chat| chat.borrow_mut().push(new_msg))
 }
 
